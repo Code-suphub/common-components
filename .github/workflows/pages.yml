@@ -26,11 +26,12 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: examples/showcase/package-lock.json
+          cache-dependency-path: |
+            package-lock.json
+            examples/showcase/package-lock.json
       - run: npm ci
-        working-directory: examples/showcase
-      - run: npm run build
-        working-directory: examples/showcase
+      - run: npm ci --prefix examples/showcase
+      - run: npm run build --prefix examples/showcase
       - uses: actions/upload-pages-artifact@v3
         with:
           path: examples/showcase/dist
