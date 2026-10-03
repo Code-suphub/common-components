@@ -12,12 +12,14 @@
     "./react/table": "./packages/frontend/react/table/src/index.ts",
     "./react/table/styles.css": "./packages/frontend/react/table/src/styles.css",
     "./react/ui": "./packages/frontend/react/ui/src/index.ts",
-    "./react/ui/styles.css": "./packages/frontend/react/ui/src/styles.css"
+    "./react/ui/styles.css": "./packages/frontend/react/ui/src/styles.css",
+    "./react/antd/table-columns": "./packages/frontend/react/antd/src/table-columns/ConfigurableTable.jsx"
   },
   "peerDependencies": {
     "@base-ui/react": ">=1.8.0 <2",
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "antd": ">=6 <7"
   },
   "devDependencies": {
     "@base-ui/react": "^1.8.0",
