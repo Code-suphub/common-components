@@ -12,7 +12,7 @@ Use stable, unique `tableId` and column keys. `defaultHiddenColumns` controls in
   dataSource={rows} pagination={false} />
 ```
 
-The first identifier column is always visible. Active filter columns stay visible so users can still adjust or clear conditions. Showing/hiding columns does not request data or reset filters and sorting. Numeric column widths determine native `scroll.x` from only visible columns, avoiding excess blank horizontal space. Select all and restore defaults operate on this table only.
+The first identifier column is always visible. Active filter columns stay visible so users can still adjust or clear conditions. Showing/hiding columns does not request data or reset filters and sorting. Numeric column widths (or `minWidth` for a flexible text column) determine native `scroll.x` from only visible columns, avoiding excess blank horizontal space. A column with only `minWidth` fills available space while fixed action columns retain their widths. Select all and restore defaults operate on this table only.
 
 Preferences are booleans under `flowbook:table-columns:v1:<tableId>` in localStorage. No record or financial data is stored. Missing/new columns follow defaults; corrupt or unavailable storage falls back safely. Changes apply immediately, restore defaults removes only the matching key, and each mounted table id gets independent state. Clearing browser data removes preferences. Popovers use AntD Checkbox/Button and preserve keyboard focus with Escape returning to the trigger.
 

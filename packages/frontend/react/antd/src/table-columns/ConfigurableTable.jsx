@@ -43,7 +43,8 @@ function ConfiguredTableContent({ tableId, columns = [], defaultHiddenColumns = 
     } catch { setStorageError(true); }
   }
   const close = () => { setOpen(false); triggerRef.current?.focus(); };
-  const width = visibleColumns.every(column => Number.isFinite(column.width)) ? visibleColumns.reduce((sum, column) => sum + column.width, 0) : undefined;
+  const minimumWidths = visibleColumns.map(column => column.width ?? column.minWidth);
+  const width = minimumWidths.every(Number.isFinite) ? minimumWidths.reduce((sum, value) => sum + value, 0) : undefined;
   const popup = <div ref={panelRef} className="fb-column-settings-panel" role="dialog" aria-label="选择显示的列" onKeyDown={event => { if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); close(); } }}>
     <div className="fb-column-settings-heading"><strong>显示列</strong><Button type="text" aria-label="关闭列设置" onClick={close}>×</Button></div>
     <div className="fb-column-settings-options">{choices.map(choice => <Checkbox key={choice.key} checked={choice.visible} disabled={choice.required || choice.filtered} onChange={event => save({ ...preferences, [choice.key]: event.target.checked })}>{choice.label}{choice.required ? <small>必选</small> : choice.filtered ? <small>筛选中</small> : null}</Checkbox>)}</div>
