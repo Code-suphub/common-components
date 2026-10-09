@@ -16,6 +16,7 @@
 
 | 技术栈 | 组件 | 导入路径 | 状态 |
 |---|---|---|---|
+| DOM | 弹层关闭监听（窗口失焦、页面隐藏、所属控件隐藏或不可交互） | `@local/common-components/dom/popup` | 宿主与插件共用 |
 | React | Select（单选、多选、Combobox） | `@local/common-components/react/select` | 初版 |
 | React + Ant Design | 共享主题 Token 与合并函数 | `@local/common-components/react/antd` | 主题预设 |
 | React | DataTable（受控搜索、筛选、排序、分页） | `@local/common-components/react/table` | 初版 |

@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Reusable UI and backend components shared across personal projects",
   "exports": {
+    "./dom/popup": "./packages/frontend/dom/popup.ts",
     "./react/select": "./packages/frontend/react/select/src/index.ts",
     "./react/select/styles.css": "./packages/frontend/react/select/src/styles.css",
     "./react/select/tailwind": "./packages/frontend/react/select/src/tailwind.ts",
